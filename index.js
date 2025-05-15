@@ -12,7 +12,7 @@ carServer.use(cors())
 
 carServer.use(express.json())
 
-// carServer.use('/uploads',express.static('./uploads'))
+carServer.use('/uploads',express.static('./uploads'))
 
 carServer.use(Router)
 

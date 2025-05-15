@@ -15,6 +15,9 @@ const userSchema=mongoose.Schema({
     },
     licenseNumber:{
         type:String
+    },
+    userType:{
+        type:String
     }
 })
 

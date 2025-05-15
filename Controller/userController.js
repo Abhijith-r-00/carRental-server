@@ -1,13 +1,13 @@
 const jwt=require('jsonwebtoken')
 const users=require('../Models/userModel')
 exports.registerController=async(req,res)=>{
-    const {fullName,email,password,licenseNumber}=req.body;
+    const {fullName,email,password,licenseNumber,userType}=req.body;
     try {
         const isUserAlreadyExists=await users.findOne({email})
         if(isUserAlreadyExists){
             res.status(409).json("UserAlready Exists!")
         }else{
-            const newUser=new users({fullName,email,password,licenseNumber})
+            const newUser=new users({fullName,email,password,licenseNumber,userType})
             await newUser.save()
             res.status(201).json(newUser)
         }
